@@ -725,7 +725,8 @@
             previewMedico.textContent = document.getElementById('medico').value || '—';
             previewCrm.textContent = document.getElementById('crm').value || '—';
             previewEspecialidade.textContent = document.getElementById('especialidade').value || '—';
-            previewObservacoes.textContent = document.getElementById('observacoes').value || '—';
+            const observacoesTexto = document.getElementById('observacoes').value || '—';
+            previewObservacoes.innerHTML = observacoesTexto.replace(/\n/g, '<br>');
             
             // Medicamentos
             let medicamentosHTML = '';
@@ -887,4 +888,5 @@
         }
     </script>
 </body>
+
 </html>
