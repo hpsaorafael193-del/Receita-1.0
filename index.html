@@ -450,7 +450,12 @@
                     <label for="crm">CRM</label>
                     <input type="text" id="crm" placeholder="CRM-XX 123456">
                 </div>
-                    
+                
+                <div class="form-group">
+                    <label for="especialidade">Especialidade</label>
+                    <input type="text" id="especialidade" placeholder="Clínico Geral">
+                </div>
+                
                 <div class="assinatura-section">
                     <h3><i class="fas fa-signature"></i> Assinatura Digital</h3>
                     <div class="assinatura-preview" id="assinatura-preview">
@@ -475,8 +480,8 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="idade">Passaporte</label>
-                    <input type="text" id="Passaporte" placeholder="Id">
+                    <label for="Passaporte">Passaporte</label>
+                    <input type="text" id="Passaporte" placeholder="8888">
                 </div>
                 
                 <div class="form-group">
@@ -514,7 +519,7 @@
                     <div class="receita-content">
                         <div class="paciente-info">
                             <p><strong>Paciente:</strong> <span id="preview-paciente">—</span></p>
-                            <p><strong>Idade:</strong> <span id="preview-idade">—</span></p>
+                            <p><strong>Passaporte:</strong> <span id="preview-Passaporte">—</span></p>
                             <p><strong>Data:</strong> <span id="preview-data">—</span></p>
                         </div>
                         
@@ -572,7 +577,7 @@
 
         // Elementos de preview
         const previewPaciente = document.getElementById('preview-paciente');
-        const previewIdade = document.getElementById('preview-idade');
+        const previewPassaporte = document.getElementById('preview-Passaporte');
         const previewData = document.getElementById('preview-data');
         const previewMedico = document.getElementById('preview-medico');
         const previewCrm = document.getElementById('preview-crm');
@@ -601,7 +606,7 @@
 
         function configurarEventListeners() {
             // Atualizar preview quando campos mudarem
-            const campos = ['medico', 'crm', 'especialidade', 'paciente', 'idade', 'data', 'observacoes'];
+            const campos = ['medico', 'crm', 'especialidade', 'paciente', 'Passaporte', 'data', 'observacoes'];
             campos.forEach(campo => {
                 document.getElementById(campo).addEventListener('input', atualizarPreview);
             });
@@ -715,7 +720,7 @@
         function atualizarPreview() {
             // Dados básicos
             previewPaciente.textContent = document.getElementById('paciente').value || '—';
-            previewIdade.textContent = document.getElementById('idade').value || '—';
+            previewPassaporte.textContent = document.getElementById('Passaporte').value || '—';
             previewData.textContent = document.getElementById('data').value || '—';
             previewMedico.textContent = document.getElementById('medico').value || '—';
             previewCrm.textContent = document.getElementById('crm').value || '—';
@@ -857,7 +862,7 @@
         function limparTudo() {
             if (confirm('Tem certeza que deseja limpar todos os dados?')) {
                 // Limpar campos de texto
-                const campos = ['medico', 'crm', 'especialidade', 'paciente', 'idade', 'data', 'observacoes'];
+                const campos = ['medico', 'crm', 'especialidade', 'paciente', 'Passaporte', 'data', 'observacoes'];
                 campos.forEach(campo => {
                     document.getElementById(campo).value = '';
                 });
@@ -883,7 +888,4 @@
         }
     </script>
 </body>
-
 </html>
-
-
